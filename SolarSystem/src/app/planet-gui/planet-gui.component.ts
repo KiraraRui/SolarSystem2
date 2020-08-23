@@ -9,9 +9,19 @@ import { Planet } from '../planet';
 })
 export class PlanetGuiComponent implements OnInit {
 
-  constructor() { }
+  planets: Planet[];
+  wantedPlanets: string[] = ['mercure', 'venus', 'terre', 'mars', 'jupiter', 'saturne', 'uranus', 'neptune'];
+
+  constructor(private planetServService: PlanetServService) { }
 
   ngOnInit(): void {
+    this.getPlanets()
   }
+
+  getPlanets(): void {
+    this.planetServService.getPlanets().subscribe(Planet => this.planets = Planet);
+  }
+
+
 
 }

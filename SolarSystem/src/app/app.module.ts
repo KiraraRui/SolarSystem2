@@ -6,7 +6,7 @@ import { PlanetGuiComponent } from './planet-gui/planet-gui.component';
 import { PlanetComponent } from './planet/planet.component';
 import { HttpClientModule } from '@angular/common/http'
 import { PlanetServService } from './planet-serv.service';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,4 @@ import { PlanetServService } from './planet-serv.service';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(private service: PlanetServService) {
-  }
-}
+export class AppModule { }

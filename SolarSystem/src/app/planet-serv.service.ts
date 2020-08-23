@@ -1,20 +1,35 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { Planet } from './planet';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlanetServService {
+  constructor(private httpClient: HttpClient) { }
 
-  constructor() { }
+  getPlanets(): Observable<Planet[]> {
+    return this.httpClient.get<Planet[]>('https://dry-plains-91502.herokuapp.com/planets');
+  }
 }
 
 
 
 
+/*
+It says in their documentation in tour of heroes in chap 6 , it says that i should not sub but i can pipe - i quote
+"{Things go wrong, especially when you're getting data from a remote server. The HeroService.getHeroes() method should catch errors and do something appropriate.
+To catch errors, you "pipe" the observable result from http.get() through an RxJS catchError() operator.
+Import the catchError symbol from rxjs/operators, along with some other operators you'll need later.}"
 
 
 
-/*Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 days, the shortest of all the planets in the Solar System.
+
+
+
+Mercury is the smallest and innermost planet in the Solar System. Its orbit around the Sun takes 87.97 days, the shortest of all the planets in the Solar System.
 
 Venus is the second planet from the Sun. It is named after the Roman goddess of love and beauty. As the second-brightest natural object in the night sky after the Moon
 
@@ -32,4 +47,6 @@ Uranus is blue-green in color, as a result of the methane in its mostly hydrogen
 Neptune is very similar to Uranus. It's made of a thick soup of water, ammonia, and methane over an Earth-sized solid center. Its atmosphere is made of hydrogen, helium, and methane. The methane gives Neptune the same blue color as Uranus.
 
 // brug https://angular.io/tutorial/toh-pt4
+
+9/27
 */

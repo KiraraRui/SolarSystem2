@@ -1,5 +1,6 @@
 <div class="planet">
-    <div *ngFor="let planet of planet">
+    <div *ngFor="let planet of planets">
+        <app-planet [planet]="planet"></app-planet>
     </div>
 </div>
 <div class="stars"></div>
