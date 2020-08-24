@@ -16,4 +16,5 @@ export interface Planet {
     number_of_moons: number;
     created_at: string;
     updated_at: string;
+    src: string;
 }

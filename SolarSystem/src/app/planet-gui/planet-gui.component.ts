@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PlanetServService } from '../planet-serv.service';
 import { Planet } from '../planet';
+import { PlanetComponent } from '../planet/planet.component';
+
 
 @Component({
   selector: 'app-planet-gui',
@@ -9,8 +11,7 @@ import { Planet } from '../planet';
 })
 export class PlanetGuiComponent implements OnInit {
 
-  planets: Planet[];
-  wantedPlanets: string[] = ['mercure', 'venus', 'terre', 'mars', 'jupiter', 'saturne', 'uranus', 'neptune'];
+  planets: Planet[] = [];
 
   constructor(private planetServService: PlanetServService) { }
 
@@ -25,3 +26,4 @@ export class PlanetGuiComponent implements OnInit {
 
 
 }
+

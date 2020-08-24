@@ -1,3 +1,6 @@
 <div class="col-sm-8">
-    <img id="{{planetinput.englishName}}" [src]="ImagePath" (click)="onClick()" alt="Planet" />
+    <img id="{{planetinput.name}}" [src]="planetinput.src" (click)="onClick()" alt="Planet" />
+</div>
+<div class="description" [hidden]="isHide">
+    <h2>"{{selectedPlanet.name}}" Mass "{{selectedPlanet.mass}}"</h2>
 </div>

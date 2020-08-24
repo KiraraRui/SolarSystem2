@@ -10,25 +10,30 @@ import { PlanetServService } from '../planet-serv.service';
 })
 export class PlanetComponent implements OnInit {
 
-  @Input('planet') planetinput: Planet;
 
+  @Input('planet') planetinput: Planet;
+  isHide = true;
+  selectedPlanet = { "name": "." };
   constructor() {
-    console.log(this.ImagePath);
   }
 
-  ImagePath: string;
 
   ngOnInit(): void {
-    this.ImagePath = '../../../assets/' + this.planetinput.name + 'Off.png';
+    this.planetinput.src = '../../../assets/' + this.planetinput.name + 'Off.png';
   }
 
   onClick() {
-    if (this.ImagePath.endsWith('Off.png')) {
-      this.ImagePath =
+    if (this.planetinput.src == '../../../assets/' + this.planetinput.name + 'Off.png') {
+      this.planetinput.src =
         '../../../assets/' + this.planetinput.name + 'On.png';
+      this.selectedPlanet = this.planetinput;
+      this.isHide = false;
+
     } else {
-      this.ImagePath =
+      this.planetinput.src =
         '../../../assets/' + this.planetinput.name + 'Off.png';
+      this.isHide = true;
     }
+
   }
 }
