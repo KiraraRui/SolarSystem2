@@ -2,5 +2,6 @@
     <img id="{{planetinput.name}}" [src]="planetinput.src" (click)="onClick()" alt="Planet" />
 </div>
 <div class="description" [hidden]="isHide">
-    <h2>"{{selectedPlanet.name}}" Mass "{{selectedPlanet.mass}}"</h2>
+    <h2>"{{selectedPlanet.name}}" Mass "{{selectedPlanet.mass}}" Gravity "{{selectedPlanet.gravity}}" number_of_moons
+        "{{selectedPlanet.number_of_moons}}"</h2>
 </div>
