@@ -10,7 +10,7 @@ import { Planet } from '../planet';
 export class PlanetGuiComponent implements OnInit {
 
   planets: Planet[];
-  wantedPlanets: string[] = ['mercure', 'venus', 'terre', 'mars', 'jupiter', 'saturne', 'uranus', 'neptune'];
+  wantedPlanets: string[] = ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune'];
 
   constructor(private planetServService: PlanetServService) { }
 
